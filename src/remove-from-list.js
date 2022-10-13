@@ -27,12 +27,11 @@ function removeKFromList(l, k) {
     return;
   }
 
-  let currentNode = l;
-
-  while(currentNode.value === k) {
-    currentNode = currentNode.next;
+  while(l && l.value === k) {
+    l = l.next;
   }
 
+  let currentNode = l;
   while(currentNode.next) {
     if(currentNode.next.value === k) {
       currentNode.next = currentNode.next.next;
@@ -40,11 +39,7 @@ function removeKFromList(l, k) {
       currentNode = currentNode.next;
     }
   }
-
-  
-
-  return l;
-  
+  return l; 
 }
 
 
